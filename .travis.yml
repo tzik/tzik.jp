@@ -3,3 +3,14 @@ language: go
 go:
   - 1.8.x
   - master
+
+before_install:
+  - openssl aes-256-cbc -K $encrypted_8205d15dd51d_key -iv $encrypted_8205d15dd51d_iv -in deploy_key.json.enc -out deploy_key.json -d
+
+deploy:
+  provider: gae
+  project: "tzik-jp"
+  keyfile: "deploy_key.json"
+  on: staging
+  no_promote: true
+  no_stop_previous_version: true
