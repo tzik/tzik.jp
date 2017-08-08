@@ -5,6 +5,8 @@ go:
 
 before_install:
   - bin/decrypt
+  - bin/install_gcp_sdk
+  - source "${HOME}/google-cloud-sdk/path.bash.inc"
 
 cache:
   directories:
