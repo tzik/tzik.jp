@@ -15,5 +15,5 @@ func serveAdmin(w http.ResponseWriter, r *http.Request) {
 
 func init() {
 	http.HandleFunc("/", serve)
-	http.HandleFunc("/admin", serveAdmin)
+	http.HandleFunc("/admin/", serveAdmin)
 }
