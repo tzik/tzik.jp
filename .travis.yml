@@ -6,6 +6,10 @@ go:
 before_install:
   - bin/decrypt
 
+cache:
+  directories:
+    - "${HOME}/google-cloud-sdk"
+
 deploy:
   provider: gae
   project: "tzik-jp"
