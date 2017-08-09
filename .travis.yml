@@ -17,7 +17,6 @@ deploy:
   project: "tzik-jp"
   keyfile: "etc/secret/deploy_key.json"
   config: "gae/app.yaml"
-  on: "staging"
-  version: "staging"
+  on: "master"
+  version: "master"
   no_promote: true
-  no_stop_previous_version: true
