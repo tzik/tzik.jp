@@ -19,4 +19,4 @@ deploy:
   config: "gae/app.yaml"
   on: "master"
   version: "master"
-  no_promote: true
+  no_promote: false
