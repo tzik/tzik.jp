@@ -1,0 +1,7 @@
+runtime: go
+api_version: go1.9
+
+handlers:
+- url: /
+  static_files: content/main.html
+  upload: content/main.html
