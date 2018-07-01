@@ -2,8 +2,10 @@
 set -e
 cd "$(dirname "$0")/.."
 
-encryption_key="$(od -w32 -An -x -N32 /dev/urandom | sed 's/ //g')"
-encryption_iv="$(od -w16 -An -x -N16 /dev/urandom | sed 's/ //g')"
+if [ -z "${encryption_key}" -o -z "${encryption_iv}" ]; then
+  encryption_key="$(od -w32 -An -x -N32 /dev/urandom | sed 's/ //g')"
+  encryption_iv="$(od -w16 -An -x -N16 /dev/urandom | sed 's/ //g')"
+fi
 
 echo "encryption_key=${encryption_key}"
 echo "encryption_iv=${encryption_iv}"
