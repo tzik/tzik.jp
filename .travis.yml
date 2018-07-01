@@ -1,14 +1,17 @@
+language: go
+go:
+  - 1.9
 before_install:
-- .travis.d/decrypt
+  - .travis.d/decrypt
 deploy:
-- provider: gae
-  project: tzik-jp
-  keyfile: ".travis.d/credential.json"
-  version: master
-  on: master
-  no_promote: true
-- provider: gae
-  project: tzik-jp
-  keyfile: ".travis.d/credential.json"
-  version: deploy
-  on: deploy
+  - provider: gae
+    project: tzik-jp
+    keyfile: ".travis.d/credential.json"
+    version: master
+    on: master
+    no_promote: true
+  - provider: gae
+    project: tzik-jp
+    keyfile: ".travis.d/credential.json"
+    version: deploy
+    on: deploy
