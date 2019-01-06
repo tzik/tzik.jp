@@ -1,0 +1,8 @@
+{
+    "name": "tzik.jp",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "start": "node --experimental-modules serve.mjs"
+    }
+}

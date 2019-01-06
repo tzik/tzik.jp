@@ -1,0 +1,5 @@
+steps:
+- name: 'gcr.io/cloud-builders/git'
+  args: ['clone', '--depth=1', '--recursive', 'https://github.com/tzik/tzik.jp']
+- name: 'gcr.io/cloud-builders/gcloud-slim'
+  args: ['app', 'deploy', '--no-promote', '--version', 'staging']
