@@ -1,0 +1,18 @@
+name: Deploy
+on:
+  push:
+    branches:
+    - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Deploy
+      run: |
+        echo "${GAE_DEPLOY_KEY}" | base64 -d > key.json
+        gcloud auth activate-service-account --key-file=key.json
+        gcloud info
+      env:
+        GAE_DEPLOY_KEY: ${{ secrets.GAE_DEPLOY_KEY }}
